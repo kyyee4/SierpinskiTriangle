@@ -1,16 +1,20 @@
-public void setup()
-{
-
+color c = color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
+public void setup() {
+  size(400, 400);
 }
-public void draw()
-{
-
+public void draw() {
+  sierpinski(0, 400, 400);
 }
-public void mouseDragged()//optional
-{
-
+public void mouseDragged() {
+  c = color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
 }
-public void sierpinski(int x, int y, int len) 
-{
-
+public void sierpinski(int x, int y, int len) {
+  if (len <= 15) {
+    triangle(x, y, x+len, y, x+(len)/2, y-len);
+  } else {
+    fill (c);
+    sierpinski(x, y, len/2);
+    sierpinski(x+(len)/2, y, len/2);
+    sierpinski(x+(len)/4, y-(len/2), len/2);
+  }
 }
