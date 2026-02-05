@@ -9,7 +9,7 @@ public void mouseDragged() {
   c = color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
 }
 public void sierpinski(int x, int y, int len) {
-  if (len <= 15) {
+  if (len <= 20) {
     triangle(x, y, x+len, y, x+(len)/2, y-len);
   } else {
     fill (c);
